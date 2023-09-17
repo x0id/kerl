@@ -28,7 +28,7 @@ end
 function expected_prompt
     set BLD $argv[1]
     set OLD $argv[2]
-    echo -n "($BLD)" | cat - "$OLD"
+    echo -n "($BLD)-" | cat - "$OLD"
 end
 
 function test_it
