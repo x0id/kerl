@@ -11,14 +11,14 @@ jobs:
       fail-fast: false
       matrix:
         otp_vsn: [24]
-        os: [ubuntu-22.04]
+        os: [macos-13]
     steps:
       - name: Update env.
         run: |
           if [[ ${{matrix.os}} == macos* ]]; then
             /bin/bash -c "$(curl -fsSL \
               https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            brew install automake fop wxwidgets
+            brew install automake fop wxwidgets fish
           else
             sudo sed -i 's/azure\.//' /etc/apt/sources.list # Reduces chance of time-outs
             sudo apt-get update -y
